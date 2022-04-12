@@ -20,7 +20,7 @@ This action load or set variable to JSON file.
 
 ## `result`
 
-Result of replaced string in text.
+Retrieved variable.
 
 ## Example usage
 ```
