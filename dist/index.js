@@ -1672,13 +1672,13 @@ try {
             const dockerImage = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('image')
             dockerImage === null && (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.error)('set method require image parameter')
             newData = { image: dockerImage}
-            ;(0,fs__WEBPACK_IMPORTED_MODULE_1__.writeFileSync)(filePath, newData)
+            ;(0,fs__WEBPACK_IMPORTED_MODULE_1__.writeFileSync)(filePath, JSON.stringify(newData))
             break
         case 'get':
             ;(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.info)('using "get" operation')
             const rawdata = (0,fs__WEBPACK_IMPORTED_MODULE_1__.readFileSync)(filePath)
             const data = JSON.parse(rawdata)
-            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('result', resultVal);
+            _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('result', data);
             break
         default:
             ;(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.error)('Operation invalid. Use either "get" or "set" as the operation parameter')
