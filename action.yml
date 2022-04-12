@@ -1,0 +1,19 @@
+name: 'JSON Config'
+description: 'Load or set variable in JSON file'
+inputs:
+  operation:
+    description: 'types of operation between "set" or "get"'
+    required: true
+  filePath:
+    description: 'JSON config file location'
+    required: false
+    default: '.github/variables/shared.json'
+  image:
+    description: 'docker image tag'
+    required: false
+outputs:
+  result: # id of output
+    description: 'retrieved variable'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
